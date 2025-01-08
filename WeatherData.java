@@ -11,8 +11,9 @@ public class WeatherData
     public void cleanData(double lower, double upper){
         for(int i = 0; i < temperatures.size(); i++){
             double temp = temperatures.get(i);
-            if(temp < lower || temp > upper) temperatures.remove(i);
-            i--;
+            if(temp < lower || temp > upper){
+            temperatures.remove(i);
+            i--;}
         }
     }
 
@@ -21,7 +22,14 @@ public class WeatherData
     }
   
     public int longestHeatWave(double threshold){
-        return 0;
+        int heatwave = 0;
+        int max = 0;
+        for(double t : temperatures){
+            if( t > threshold) heatwave++;
+            if(heatwave > max) max = heatwave;
+            else heatwave = 0;
+        }
+        return max;
     }
     
 }
