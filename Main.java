@@ -15,5 +15,7 @@ public class Main{
         System.out.println(w);
         w.cleanData(85.0, 120.0);
         System.out.println(w);
+
+        double[] newTemps = {100.5, 98.5, 102, 103.9, }
         }
 }
