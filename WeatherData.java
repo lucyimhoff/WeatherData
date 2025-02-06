@@ -26,8 +26,8 @@ public class WeatherData
         int max = 0;
         for(double t : temperatures){
             if( t > threshold) heatwave++;
-            if(heatwave > max) max = heatwave;
             else heatwave = 0;
+            if(heatwave > max) max = heatwave;
         }
         return max;
     }
